@@ -44,13 +44,15 @@ const Navbar = () => {
               </li>
             </Link>
           </ul>
-          <div onClick={handleNav} className="md:hidden">
+          <div onClick={handleNav} className="md:hidden cursor-pointer">
             <AiOutlineMenu size={25} />
           </div>
         </div>
       </div>
       <div
-        className={nav ? 'fixed left-0 top-0 w-full h-screen bg-black/70' : ''}
+        className={
+          nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70' : ''
+        }
       >
         <div
           className={
