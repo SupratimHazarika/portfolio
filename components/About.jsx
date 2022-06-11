@@ -10,9 +10,9 @@ const About = () => {
           </p>
           <h2 className="py-4">Who I Am</h2>
           <p className="py-2 text-grey-600">
-            I have spent my last 3 years learning and workign for startups. At
+            I have spent my last 3 years learning and working for startups. At
             first I started learning HTML & CSS and created some websites for my
-            learnigns and to explore a new road. Being blessed by that decision,
+            learnings and to explore a new road. Being blessed by that decision,
             I have discovered my love and passion for programming.
           </p>
           <p className="py-2 text-grey-600">
