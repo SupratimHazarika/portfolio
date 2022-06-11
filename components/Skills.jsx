@@ -12,7 +12,13 @@ const Skills = () => {
             <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                <div className='grid grid-cols-2 gap-4 justify-center items-center '>
                    <div className='m-auto'>
-                       
+                      <Image 
+                      src="/../public/assets/skills/logo.png"
+                      alt="/"
+                      width="50"
+                      height="50"
+                      className="rounded-lg cursor-pointer"
+                      />
                    </div>
                </div>
             </div>
