@@ -19,7 +19,7 @@ const About = () => {
             Fascinated with how intricate programming can be I was quickly drawn
             to learn more. I started learning javascript and was even more
             enthused with making websites interactive. I then started my career
-            with an startup and there I have had the opportunity to learn new
+            with a startup and there I have had the opportunity to learn new
             technology like React JS, Redux, Redux-saga etc. Currently on top of
             it I am learninng some of the Backend Technologies also.
           </p>
