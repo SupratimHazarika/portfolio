@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
-import Logo from '../public/assets/skills/logo.png'
+import Logo from '../public/assets/skills/logo.png';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -65,7 +65,7 @@ const Navbar = () => {
           <div>
             <div className="flex w-full items-center justify-between">
               <Image
-                src="/../public/assets/logo.png"
+                src={Logo}
                 alt="/"
                 width="50"
                 height="50"
