@@ -5,10 +5,29 @@ import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import Logo from '../public/assets/skills/logo.png';
+import { useRouter } from 'next/router';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
+  const [navBg, setNavBg] = useState('#ecf0f3');
+  const [linkColor, setLinkColor] = useState('#1f2937');
+  const router = useRouter();
+
+  useEffect(() => {
+    if (
+      router.asPath === '/property' ||
+      router.asPath === '/crypto' ||
+      router.asPath === '/netflix' ||
+      router.asPath === '/twitch'
+    ) {
+      setNavBg('transparent');
+      setLinkColor('#ecf0f3');
+    } else {
+      setNavBg('#ecf0f3');
+      setLinkColor('#1f2937');
+    }
+  }, [router]);
 
   useEffect(() => {
     const handleShadow = () => {
@@ -27,6 +46,7 @@ const Navbar = () => {
 
   return (
     <div
+      style={{ backgroundColor: `${navBg}` }}
       className={
         shadow
           ? 'fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300'
@@ -113,19 +133,44 @@ const Navbar = () => {
           <div className="py-4 flex flex-col">
             <ul className="uppercase">
               <Link href="/">
-                <li onClick={()=> setNav(false)} className="py-4 text-sm cursor-pointer">Home</li>
+                <li
+                  onClick={() => setNav(false)}
+                  className="py-4 text-sm cursor-pointer"
+                >
+                  Home
+                </li>
               </Link>
               <Link href="/#about">
-                <li onClick={()=> setNav(false)} className="py-4 text-sm cursor-pointer">About</li>
+                <li
+                  onClick={() => setNav(false)}
+                  className="py-4 text-sm cursor-pointer"
+                >
+                  About
+                </li>
               </Link>
               <Link href="/#skills">
-                <li onClick={()=> setNav(false)} className="py-4 text-sm cursor-pointer">Sklills</li>
+                <li
+                  onClick={() => setNav(false)}
+                  className="py-4 text-sm cursor-pointer"
+                >
+                  Sklills
+                </li>
               </Link>
               <Link href="/#projects">
-                <li onClick={()=> setNav(false)} className="py-4 text-sm cursor-pointer">Prjects</li>
+                <li
+                  onClick={() => setNav(false)}
+                  className="py-4 text-sm cursor-pointer"
+                >
+                  Prjects
+                </li>
               </Link>
               <Link href="/#contact">
-                <li onClick={()=> setNav(false)} className="py-4 text-sm cursor-pointer">Contact</li>
+                <li
+                  onClick={() => setNav(false)}
+                  className="py-4 text-sm cursor-pointer"
+                >
+                  Contact
+                </li>
               </Link>
             </ul>
             <div className="pt-10">
