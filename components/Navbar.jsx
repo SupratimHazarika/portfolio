@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
@@ -8,39 +8,65 @@ import Logo from '../public/assets/skills/logo.png';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const [shadow, setShadow] = useState(false);
+
+  useEffect(() => {
+    const handleShadow = () => {
+      if (window.scrollY >= 90) {
+        setShadow(true);
+      } else {
+        setShadow(false);
+      }
+    };
+    window.addEventListener('scroll', handleShadow);
+  }, []);
 
   const handleNav = () => {
     setNav(!nav);
   };
 
   return (
-    <div className="fixed w-full h-20 shadow-xl z-[100]">
+    <div
+      className={
+        shadow
+          ? 'fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300'
+          : 'fixed w-full h-20 z-[100]'
+      }
+    >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
-        <Image
-          src={Logo}
-          alt="/"
-          width="50"
-          height="50"
-          className="rounded-lg cursor-pointer"
-        />
+        <Link href="/">
+          <Image
+            src={Logo}
+            alt="/"
+            width="50"
+            height="50"
+            className="rounded-lg cursor-pointer"
+          />
+        </Link>
         <div>
           <ul className="hidden md:flex">
             <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
+              <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer">
+                Home
+              </li>
             </Link>
-            <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b">About</li>
+            <Link href="/#about">
+              <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer">
+                About
+              </li>
             </Link>
-            <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b">Skills</li>
+            <Link href="/#skills">
+              <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer">
+                Skills
+              </li>
             </Link>
-            <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b">
+            <Link href="/#projects">
+              <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer">
                 Projects
               </li>
             </Link>
-            <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b">
+            <Link href="/#contact">
+              <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer">
                 Contact
               </li>
             </Link>
@@ -87,19 +113,19 @@ const Navbar = () => {
           <div className="py-4 flex flex-col">
             <ul className="uppercase">
               <Link href="/">
-                <li className="py-4 text-sm">Home</li>
+                <li onClick={()=> setNav(false)} className="py-4 text-sm cursor-pointer">Home</li>
               </Link>
-              <Link href="/">
-                <li className="py-4 text-sm">About</li>
+              <Link href="/#about">
+                <li onClick={()=> setNav(false)} className="py-4 text-sm cursor-pointer">About</li>
               </Link>
-              <Link href="/">
-                <li className="py-4 text-sm">Sklills</li>
+              <Link href="/#skills">
+                <li onClick={()=> setNav(false)} className="py-4 text-sm cursor-pointer">Sklills</li>
               </Link>
-              <Link href="/">
-                <li className="py-4 text-sm">Prjects</li>
+              <Link href="/#projects">
+                <li onClick={()=> setNav(false)} className="py-4 text-sm cursor-pointer">Prjects</li>
               </Link>
-              <Link href="/">
-                <li className="py-4 text-sm">Contact</li>
+              <Link href="/#contact">
+                <li onClick={()=> setNav(false)} className="py-4 text-sm cursor-pointer">Contact</li>
               </Link>
             </ul>
             <div className="pt-10">
