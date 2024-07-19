@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="w-full md:h-screen p-2 flex items-center py-16">
+    <div id='about' className="w-full md:h-screen p-2 flex items-center py-16">
       <div className="max-w-[1240px] m-auto md:grid grid-cols-3 gap-8">
         <div className="col-span-2">
           <p className="uppercase text-xl tracking-widest text-[#5651e5]">
@@ -19,7 +19,7 @@ const About = () => {
             Fascinated with how intricate programming can be I was quickly drawn
             to learn more. I started learning javascript and was even more
             enthused with making websites interactive. I then started my career
-            with an startup and there I have had the opportunity to learn new
+            with a startup and there I have had the opportunity to learn new
             technology like React JS, Redux, Redux-saga etc. Currently on top of
             it I am learninng some of the Backend Technologies also.
           </p>
