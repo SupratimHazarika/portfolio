@@ -36,20 +36,20 @@ const Contact = () => {
                 <p className="uppercase pt-8">Connect With Me</p>
                 <div className="flex items-center justify-between py-4">
                   <Link href="/" target="_blank">
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                    <div className="rounded-full shadow-lg shadow-indigo-500/40 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <FaLinkedinIn />
                     </div>
                   </Link>
                   <Link href="https://github.com/SupratimHazarika">
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                    <div className="rounded-full shadow-lg shadow-indigo-500/40 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <FaGithub />
                     </div>
                   </Link>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                  <div className="rounded-full shadow-lg shadow-indigo-500/40 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                     <AiOutlineMail />
                   </div>
                   <Link href="/#contact">
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                    <div className="rounded-full shadow-lg shadow-indigo-500/40 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <BsFillPersonLinesFill />
                     </div>
                   </Link>
@@ -58,7 +58,7 @@ const Contact = () => {
             </div>
           </div>
           {/* right */}
-          <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
+          <div className="col-span-3 w-full h-auto shadow-xl shadow-indigo-500/40 rounded-xl lg:p-4">
             <div className="p-4">
               <form
                 action=""
@@ -68,7 +68,7 @@ const Contact = () => {
                   <div className="flex flex-col">
                     <label className="uppercase text-sm py-2">Name</label>
                     <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
+                      className="border-2 rounded-lg p-3 flex border-gray-300 text-black"
                       type="text"
                       name="name"
                     />
@@ -78,7 +78,7 @@ const Contact = () => {
                       Phone Number
                     </label>
                     <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
+                      className="border-2 rounded-lg p-3 flex border-gray-300 text-black"
                       type="text"
                       name="phone"
                     />
@@ -87,7 +87,7 @@ const Contact = () => {
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Email</label>
                   <input
-                    className="border-2 rounded-lg p-3 flex border-gray-300"
+                    className="border-2 rounded-lg p-3 flex border-gray-300 text-black"
                     type="email"
                     name="email"
                   />
@@ -95,7 +95,7 @@ const Contact = () => {
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Subject</label>
                   <input
-                    className="border-2 rounded-lg p-3 flex border-gray-300"
+                    className="border-2 rounded-lg p-3 flex border-gray-300 text-black"
                     type="text"
                     name="subject"
                   />
@@ -103,7 +103,7 @@ const Contact = () => {
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Message</label>
                   <textarea
-                    className="border-2 rounded-lg p-3 border-gray-300"
+                    className="border-2 rounded-lg p-3 border-gray-300 text-black"
                     rows="10"
                     name="message"
                   ></textarea>
@@ -117,7 +117,7 @@ const Contact = () => {
         </div>
         <div className='flex justify-center py-12'>
           <Link href='/'>
-            <div className='rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300'>
+            <div className='rounded-full shadow-lg shadow-indigo-500/40 p-4 cursor-pointer hover:scale-110 ease-in duration-300'>
               <HiOutlineChevronDoubleUp className='text-[#5651e5]' size={30} />
             </div>
           </Link>
