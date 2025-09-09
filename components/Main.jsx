@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { AiOutlineMail } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-import me from '../public/assets/projects/meNew.jpeg';
+// import me from '../public/assets/projects/meNew.jpeg';
 
 const Main = () => {
   return (
@@ -20,7 +20,7 @@ const Main = () => {
           <Image
             className="rounded-[50%] object-contain hover:scale-75 ease-in duration-300"
             width="160" height="160"
-            src={me}
+            src="/assets/projects/meNew.jpg"
             alt="/"
           />
           <h1 className="py-2 text-grey-700">A Front-End Web Developer</h1>
