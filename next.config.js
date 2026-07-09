@@ -2,9 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    // unoptimized: true, // disable next/image optimization
-    domains: ['images.unsplash.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

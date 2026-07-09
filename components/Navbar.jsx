@@ -1,25 +1,28 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
-import Logo from '../public/assets/skills/logo.png';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
+
+const Logo = '/assets/skills/logo.png';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
   const [navBg, setNavBg] = useState('#1b195b');
   const [linkColor, setLinkColor] = useState('#1f2937');
-  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (
-      router.asPath === '/property' ||
-      router.asPath === '/crypto' ||
-      router.asPath === '/netflix' ||
-      router.asPath === '/twitch'
+      pathname === '/property' ||
+      pathname === '/crypto' ||
+      pathname === '/netflix' ||
+      pathname === '/twitch'
     ) {
       setNavBg('transparent');
       setLinkColor('#ecf0f3');
@@ -27,7 +30,7 @@ const Navbar = () => {
       setNavBg('#1b195b');
       setLinkColor('#1f2937');
     }
-  }, [router]);
+  }, [pathname]);
 
   useEffect(() => {
     const handleShadow = () => {

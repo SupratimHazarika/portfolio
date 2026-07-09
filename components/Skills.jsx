@@ -1,13 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
-import htmlLogo from '../public/assets/skills/html.png';
-import CssLogo from '../public/assets/skills/css.png';
-import JSLogo from '../public/assets/skills/javascript.png';
-import ReactLogo from '../public/assets/skills/react.png';
-import ReduxLogo from '../public/assets/skills/redux-logo.png';
-import ReduxSagaLogo from '../public/assets/skills/redux-saga2.png';
-import TailwindLogo from '../public/assets/skills/tailwind.png';
-import NextJsLogo from '../public/assets/skills/nextjs.png';
+
+const htmlLogo = '/assets/skills/html.png';
+const CssLogo = '/assets/skills/css.png';
+const JSLogo = '/assets/skills/javascript.png';
+const ReactLogo = '/assets/skills/react.png';
+const ReduxLogo = '/assets/skills/redux-logo.png';
+const ReduxSagaLogo = '/assets/skills/redux-saga2.png';
+const TailwindLogo = '/assets/skills/tailwind.png';
+const NextJsLogo = '/assets/skills/nextjs.png';
 
 const Skills = () => {
   return (

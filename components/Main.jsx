@@ -18,7 +18,7 @@ const Main = () => {
             Hi, I'm <span className="text-[#5651e5]">Supratim</span>
           </h1>
           <Image
-            className="rounded-[50%] object-contain hover:scale-75 ease-in duration-300"
+            className="mx-auto block rounded-[50%] object-contain hover:scale-75 ease-in duration-300"
             width="160" height="160"
             src="/assets/projects/meNew.jpg"
             alt="/"

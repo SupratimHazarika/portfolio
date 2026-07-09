@@ -1,18 +1,17 @@
 import Image from 'next/image';
-import React from 'react';
-import wilmImage from '../public/assets/projects/wilm48.PNG';
-import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
+import { RiRadioButtonFill } from 'react-icons/ri';
 
-const project1 = () => {
+const wilmImage = '/assets/projects/wilm48.PNG';
+
+export default function Project1() {
   return (
     <div className="w-full">
       <div className="w-screen h-[50vh] relative">
         <div className="absolute top-0 left-0 w-full h-[50vh] bg-black/70 z-10" />
         <Image
-          className="absolute z-1"
-          layout="fill"
-          objectFit="contain"
+          className="absolute z-1 object-contain"
+          fill
           src={wilmImage}
           alt="/"
         />
@@ -44,12 +43,6 @@ const project1 = () => {
             virtual reality experience with Wilm where you can enjoy the works
             of some of the amazingly talented peoples.
           </p>
-          {/* <a href="" target="_blank" rel="noreferrer">
-            <button className="px-8 py-2 mt-4 mr-8">Code</button>
-          </a>
-          <a href="" target="_blank" rel="noreferrer">
-            
-          </a> */}
         </div>
         <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl py-4">
           <div className="p-2">
@@ -82,6 +75,4 @@ const project1 = () => {
       </div>
     </div>
   );
-};
-
-export default project1;
+}
