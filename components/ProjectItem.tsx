@@ -1,8 +1,13 @@
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const ProjectItem = ({ title, backgroundImg, projectUrl }) => {
+interface ProjectItemProps {
+  title: string;
+  backgroundImg: string;
+  projectUrl: string;
+}
+
+const ProjectItem = ({ title, backgroundImg, projectUrl }: ProjectItemProps) => {
   return (
     <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-indigo-500/40 rounded-xl p-4 group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff]">
       <Image

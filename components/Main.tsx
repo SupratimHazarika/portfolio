@@ -1,10 +1,8 @@
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AiOutlineMail } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-// import me from '../public/assets/projects/meNew.jpeg';
 
 const Main = () => {
   return (
@@ -19,16 +17,17 @@ const Main = () => {
           </h1>
           <Image
             className="mx-auto block rounded-[50%] object-contain hover:scale-75 ease-in duration-300"
-            width="160" height="160"
+            width={160}
+            height={160}
             src="/assets/projects/meNew.jpg"
             alt="/"
           />
           <h1 className="py-2 text-grey-700">A Front-End Web Developer</h1>
           <p className="py-4 text-gray-500 max-w-[70%] m-auto">
             {' '}
-            I’m a front-end web developer specializing in building (and
+            I'm a front-end web developer specializing in building (and
             occasionally designing) exceptional digital experiences. Currently,
-            I’m focused on building awesome web applications with front-end and
+            I'm focused on building awesome web applications with front-end and
             back-end technologies.
           </p>
           <div className="flex items-center justify-between max-w-[300px] m-auto py-4">
