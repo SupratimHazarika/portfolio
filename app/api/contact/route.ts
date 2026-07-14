@@ -1,7 +1,17 @@
 import nodemailer from 'nodemailer';
+import { NextRequest } from 'next/server';
 
-export async function POST(req) {
-  const { name, email, phone, subject, message } = await req.json();
+interface ContactRequestBody {
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+}
+
+export async function POST(req: NextRequest) {
+  const { name, email, phone, subject, message } =
+    (await req.json()) as ContactRequestBody;
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
