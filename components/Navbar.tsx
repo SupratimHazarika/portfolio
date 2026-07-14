@@ -1,33 +1,17 @@
-import React, { useState, useEffect } from 'react';
+'use client';
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
-import Logo from '../public/assets/skills/logo.png';
-import { useRouter } from 'next/router';
+
+const Logo = '/assets/skills/logo.png';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
-  const [navBg, setNavBg] = useState('#1b195b');
-  const [linkColor, setLinkColor] = useState('#1f2937');
-  const router = useRouter();
-
-  useEffect(() => {
-    if (
-      router.asPath === '/property' ||
-      router.asPath === '/crypto' ||
-      router.asPath === '/netflix' ||
-      router.asPath === '/twitch'
-    ) {
-      setNavBg('transparent');
-      setLinkColor('#ecf0f3');
-    } else {
-      setNavBg('#1b195b');
-      setLinkColor('#1f2937');
-    }
-  }, [router]);
 
   useEffect(() => {
     const handleShadow = () => {
@@ -38,6 +22,7 @@ const Navbar = () => {
       }
     };
     window.addEventListener('scroll', handleShadow);
+    return () => window.removeEventListener('scroll', handleShadow);
   }, []);
 
   const handleNav = () => {
@@ -46,7 +31,6 @@ const Navbar = () => {
 
   return (
     <div
-      // style={{ backgroundColor: `${navBg}` }}
       className={
         shadow
           ? 'fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300 bg-gradient-to-b from-[#1b195b] to-[#151515]'
@@ -54,12 +38,12 @@ const Navbar = () => {
       }
     >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
-        <Link href="/" className='shadow-xl shadow-indigo-500/40'>
+        <Link href="/" className="shadow-xl shadow-indigo-500/40">
           <Image
             src={Logo}
             alt="/"
-            width="50"
-            height="50"
+            width={50}
+            height={50}
             className="rounded-lg cursor-pointer"
           />
         </Link>
@@ -113,8 +97,8 @@ const Navbar = () => {
               <Image
                 src={Logo}
                 alt="/"
-                width="50"
-                height="50"
+                width={50}
+                height={50}
                 className="rounded-lg cursor-pointer"
               />
               <div

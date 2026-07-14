@@ -1,30 +1,41 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 import Link from 'next/link';
 import { AiOutlineMail } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
 
-const Contact = () => {
-  // State to store form inputs
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
-  });
+interface ContactFormData {
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+}
 
-  const handleChange = (e) => {
-    setFormData(prev => ({
+const initialFormData: ContactFormData = {
+  name: '',
+  email: '',
+  phone: '',
+  subject: '',
+  message: '',
+};
+
+const Contact = () => {
+  const [formData, setFormData] = useState<ContactFormData>(initialFormData);
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const response = await fetch('/api/contact', {
@@ -35,22 +46,21 @@ const Contact = () => {
 
     const result = await response.json();
     if (result.success) {
-      alert("Message sent!");
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      alert('Message sent!');
+      setFormData(initialFormData);
     } else {
-      alert("Failed to send message.");
+      alert('Failed to send message.');
     }
   };
 
   return (
-    <div id='contact' className="w-full lg:h-screen">
+    <div id="contact" className="w-full lg:h-screen">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Contact
         </p>
         <h2 className="py-4">Get In Touch</h2>
         <div className="grid lg:grid-cols-5 gap-8">
-          {/* Left */}
           <div className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-grey-400 rounded-xl p-4">
             <div className="lg:p-4 h-full ">
               <div>
@@ -87,7 +97,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Right */}
           <div className="col-span-3 w-full h-auto shadow-xl shadow-indigo-500/40 rounded-xl lg:p-4">
             <div className="p-4">
               <form onSubmit={handleSubmit}>
@@ -140,14 +149,17 @@ const Contact = () => {
                   <label className="uppercase text-sm py-2">Message</label>
                   <textarea
                     className="border-2 rounded-lg p-3 border-gray-300 text-black"
-                    rows="10"
+                    rows={10}
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     required
                   ></textarea>
                 </div>
-                <button type="submit" className="w-full p-4 text-gray-100 mt-4 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-lg">
+                <button
+                  type="submit"
+                  className="w-full p-4 text-gray-100 mt-4 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-lg"
+                >
                   Send Message
                 </button>
               </form>
@@ -155,10 +167,10 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className='flex justify-center py-12'>
-          <Link href='/'>
-            <div className='rounded-full shadow-lg shadow-indigo-500/40 p-4 cursor-pointer hover:scale-110 ease-in duration-300'>
-              <HiOutlineChevronDoubleUp className='text-[#5651e5]' size={30} />
+        <div className="flex justify-center py-12">
+          <Link href="/">
+            <div className="rounded-full shadow-lg shadow-indigo-500/40 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
+              <HiOutlineChevronDoubleUp className="text-[#5651e5]" size={30} />
             </div>
           </Link>
         </div>

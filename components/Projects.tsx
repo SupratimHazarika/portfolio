@@ -1,11 +1,11 @@
-import React from 'react';
-import WilmImage from '../public/assets/projects/Wilm3.PNG';
-import GetIt from '../public/assets/projects/getIt1.PNG';
 import ProjectItem from './ProjectItem';
+
+const WilmImage = '/assets/projects/Wilm3.PNG';
+const GetIt = '/assets/projects/getIt1.PNG';
 
 const Projects = () => {
   return (
-    <div id='projects' className="w-full">
+    <div id="projects" className="w-full">
       <div className="max-w-[1240px] mx-auto px-2 py-16">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Projects
