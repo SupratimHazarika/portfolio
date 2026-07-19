@@ -46,12 +46,40 @@ const AskAI = () => {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [apiStatus, setApiStatus] = useState<'checking' | 'online' | 'offline'>(
+    'checking'
+  );
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, loading]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const checkHealth = async () => {
+      try {
+        const response = await fetch('/api/health', { cache: 'no-store' });
+        const data = (await response.json()) as { status?: string };
+        if (cancelled) return;
+        setApiStatus(
+          response.ok && data.status === 'ok' ? 'online' : 'offline'
+        );
+      } catch {
+        if (!cancelled) setApiStatus('offline');
+      }
+    };
+
+    void checkHealth();
+    const intervalId = window.setInterval(checkHealth, 30000);
+
+    return () => {
+      cancelled = true;
+      window.clearInterval(intervalId);
+    };
+  }, []);
 
   const askQuestion = async (question: string) => {
     const trimmed = question.trim();
@@ -153,9 +181,36 @@ const AskAI = () => {
   return (
     <div id="ask-ai" className="w-full">
       <div className="max-w-[1240px] mx-auto px-2 py-16">
-        <p className="text-xl tracking-widest uppercase text-[#5651e5]">
-          Ask AI
-        </p>
+        <div className="flex flex-wrap items-center gap-3 pb-2">
+          <p className="text-xl tracking-widest uppercase text-[#5651e5]">
+            Ask AI
+          </p>
+          <span
+            className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs uppercase tracking-wider ${
+              apiStatus === 'online'
+                ? 'border-emerald-500/40 text-emerald-400 bg-emerald-950/30'
+                : apiStatus === 'offline'
+                  ? 'border-red-500/40 text-red-300 bg-red-950/20'
+                  : 'border-gray-600 text-gray-400 bg-gray-900/40'
+            }`}
+            aria-live="polite"
+          >
+            <span
+              className={`h-2 w-2 rounded-full ${
+                apiStatus === 'online'
+                  ? 'bg-emerald-400'
+                  : apiStatus === 'offline'
+                    ? 'bg-red-400'
+                    : 'bg-gray-400 animate-pulse'
+              }`}
+            />
+            {apiStatus === 'online'
+              ? 'API online'
+              : apiStatus === 'offline'
+                ? 'API offline'
+                : 'Checking API…'}
+          </span>
+        </div>
         <h2 className="py-4">Ask AI about me</h2>
         <p className="pb-8 text-gray-400 max-w-[720px]">
           Curious about my experience, skills, or projects? Ask a question and
