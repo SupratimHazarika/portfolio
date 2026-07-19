@@ -69,6 +69,11 @@ const Navbar = () => {
                 Projects
               </li>
             </Link>
+            <Link href="/#ask-ai">
+              <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer">
+                Ask AI
+              </li>
+            </Link>
             <Link href="/#contact">
               <li className="ml-10 text-sm uppercase hover:border-b cursor-pointer">
                 Contact
@@ -146,6 +151,14 @@ const Navbar = () => {
                   className="py-4 text-sm cursor-pointer"
                 >
                   Prjects
+                </li>
+              </Link>
+              <Link href="/#ask-ai">
+                <li
+                  onClick={() => setNav(false)}
+                  className="py-4 text-sm cursor-pointer"
+                >
+                  Ask AI
                 </li>
               </Link>
               <Link href="/#contact">
