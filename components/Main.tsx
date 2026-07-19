@@ -32,7 +32,21 @@ const Main = () => {
             Jio, and applying GenAI/RAG through an EPGP in AI &amp; Machine
             Learning at IIIT Bangalore.
           </p>
-          <div className="flex items-center justify-between max-w-[300px] m-auto py-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 py-2">
+            <Link
+              href="/#ask-ai"
+              className="px-8 py-3 text-gray-100 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-lg uppercase tracking-wider text-sm font-medium hover:opacity-90 transition shadow-lg shadow-indigo-500/40"
+            >
+              Ask AI about me
+            </Link>
+            <Link
+              href="/#projects"
+              className="px-8 py-3 text-gray-200 border border-indigo-500/40 rounded-lg uppercase tracking-wider text-sm font-medium hover:bg-indigo-500/10 transition"
+            >
+              View projects
+            </Link>
+          </div>
+          <div className="flex items-center justify-between max-w-[300px] m-auto py-6">
             <Link href="https://www.linkedin.com/in/supratim-hazarika-079808160/">
               <div className="rounded-full shadow-lg shadow-indigo-500/40 p-6 cursor-pointer hover:scale-125 ease-in duration-300">
                 <FaLinkedinIn />
