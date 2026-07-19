@@ -10,25 +10,27 @@ const Main = () => {
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
         <div>
           <p className="mt-10 uppercase text-sm tracking-widest text-grey-600">
-            Let's build something together
+            Let&apos;s build intelligent products together
           </p>
           <h1 className="py-4 text-grey-700">
-            Hi, I'm <span className="text-[#5651e5]">Supratim</span>
+            Hi, I&apos;m <span className="text-[#5651e5]">Supratim</span>
           </h1>
           <Image
             className="mx-auto block rounded-[50%] object-contain hover:scale-75 ease-in duration-300"
             width={160}
             height={160}
             src="/assets/projects/meNew.jpg"
-            alt="/"
+            alt="Supratim Hazarika"
           />
-          <h1 className="py-2 text-grey-700">A Front-End Web Developer</h1>
+          <h1 className="py-2 text-grey-700">
+            Fullstack &amp; Applied AI Engineer
+          </h1>
           <p className="py-4 text-gray-500 max-w-[70%] m-auto">
-            {' '}
-            I'm a front-end web developer specializing in building (and
-            occasionally designing) exceptional digital experiences. Currently,
-            I'm focused on building awesome web applications with front-end and
-            back-end technologies.
+            Software engineer with 6+ years of experience building scalable,
+            API-driven applications — from React/Next.js interfaces to Node.js
+            backends with PostgreSQL and Redis. Currently an SDE-2 at Reliance
+            Jio, and applying GenAI/RAG through an EPGP in AI &amp; Machine
+            Learning at IIIT Bangalore.
           </p>
           <div className="flex items-center justify-between max-w-[300px] m-auto py-4">
             <Link href="https://www.linkedin.com/in/supratim-hazarika-079808160/">
@@ -41,12 +43,12 @@ const Main = () => {
                 <FaGithub />
               </div>
             </Link>
-            <Link href="/">
+            <Link href="/#contact">
               <div className="rounded-full shadow-lg shadow-indigo-500/40 p-6 cursor-pointer hover:scale-125 ease-in duration-300">
                 <AiOutlineMail />
               </div>
             </Link>
-            <Link href="/">
+            <Link href="/#contact">
               <div className="rounded-full shadow-lg shadow-indigo-500/40 p-6 cursor-pointer hover:scale-125 ease-in duration-300">
                 <BsFillPersonLinesFill />
               </div>

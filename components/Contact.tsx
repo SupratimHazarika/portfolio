@@ -65,16 +65,21 @@ const Contact = () => {
             <div className="lg:p-4 h-full ">
               <div>
                 <h2 className="py-2">Supratim Hazarika</h2>
-                <p>Front-End Developer</p>
+                <p>Fullstack &amp; Applied AI Engineer · Bengaluru</p>
                 <p className="py-4">
-                  I am available for freelance or full-time positions. Contact
-                  me and let's talk.
+                  Open to roles spanning fullstack product engineering and
+                  Applied AI — especially teams building API-driven systems and
+                  GenAI/RAG features in production. Contact me and let&apos;s
+                  talk.
                 </p>
               </div>
               <div>
                 <p className="uppercase pt-8">Connect With Me</p>
                 <div className="flex items-center justify-between py-4">
-                  <Link href="/" target="_blank">
+                  <Link
+                    href="https://www.linkedin.com/in/supratim-hazarika-079808160/"
+                    target="_blank"
+                  >
                     <div className="rounded-full shadow-lg shadow-indigo-500/40 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <FaLinkedinIn />
                     </div>

@@ -9,10 +9,10 @@ import {
 } from 'react';
 
 const SUGGESTED_PROMPTS = [
-  'What is your current role?',
-  'What tech stack do you use?',
-  'Tell me about your RAG project',
-  'How many years of experience do you have?',
+  'Are you more frontend or fullstack?',
+  'What’s your Applied AI focus?',
+  'Tell me about your URL shortener performance work',
+  'What did you build at Jio?',
 ] as const;
 
 const MAX_QUESTION_LENGTH = 500;
