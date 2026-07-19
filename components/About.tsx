@@ -10,14 +10,21 @@ const About = () => {
           </p>
           <h2 className="py-4">Who I Am</h2>
           <p className="py-2 text-gray-400">
-            I have accumulated 6 years of experience in the field, now working at a leading product-based company. My journey began with startups, where I spent 3 years honing my skills. Starting with HTML and CSS, I created websites to learn and explore new avenues. This decision ignited my passion for programming, a passion that continues to drive my career today.
+            I&apos;m a fullstack engineer who is equally comfortable owning the
+            UI, the API, and the data layer. As an SDE-2 at Reliance Jio, I&apos;ve
+            contributed to enterprise products including Jio Assist — a Micro
+            Frontend platform used by 50,000+ customer support agents — and
+            JioChat, a real-time communication product at Jio scale. My work
+            spans React/TypeScript frontends, REST integrations, reusable
+            component systems, and close collaboration with backend teams.
           </p>
           <p className="py-2 text-gray-400">
-            Fascinated with how intricate programming can be I was quickly drawn
-            to learn more. I started learning JavaScript and was even more
-            enthused with making websites interactive. I then started my career
-            with a startup and there I have had the opportunity to learn new
-            technology like React.js, Next.js, Redux, Redux-saga, Express.js etc. 
+            Earlier roles at Applaunch and Tardigrade made me a true fullstack
+            builder: Node.js/Express services, JWT auth, REST APIs, database
+            design (PostgreSQL/MongoDB), and Redis-backed performance work.
+            I&apos;m now expanding into Applied AI — studying GenAI and RAG at
+            IIIT Bangalore and shipping those ideas into real product features,
+            including the &quot;Ask AI about me&quot; experience on this site.
           </p>
         </div>
         <div className="w-full h-auto m-auto shadow-xl shadow-indigo-500/40 rounded-xl flex items-center justify-center p-4 hover:scale-105 ease-in duration-300">
