@@ -1,4 +1,5 @@
 import About from '../components/About';
+import AskAI from '../components/AskAI';
 import Contact from '../components/Contact';
 import Main from '../components/Main';
 import Navbar from '../components/Navbar';
@@ -13,6 +14,7 @@ export default function Home() {
       <About />
       <Skills />
       <Projects />
+      <AskAI />
       <Contact />
     </div>
   );
